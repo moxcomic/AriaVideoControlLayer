@@ -9,6 +9,8 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = "11.0"
   s.swift_version = "5.0"
   s.source_files = "AriaVideoControlLayer/Classes/**/*.swift"
+  s.resource = 'AriaVideoControlLayer/Classes/Settings.bundle'
+  
   s.frameworks = "UIKit", "Foundation"
 
   s.dependency "Then"

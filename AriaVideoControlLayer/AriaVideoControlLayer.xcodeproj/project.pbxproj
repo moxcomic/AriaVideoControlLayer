@@ -92,7 +92,6 @@
 		025158EE238EEED6005A1F43 = {
 			isa = PBXGroup;
 			children = (
-				02879610238EFA24009CE337 /* Settings.bundle */,
 				02515912238EEEEA005A1F43 /* Classes */,
 				025158FA238EEED6005A1F43 /* AriaVideoControlLayer */,
 				02515905238EEED6005A1F43 /* AriaVideoControlLayerTests */,
@@ -132,6 +131,7 @@
 		02515912238EEEEA005A1F43 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				02879610238EFA24009CE337 /* Settings.bundle */,
 				02515913238EEF3D005A1F43 /* Core */,
 			);
 			path = Classes;
