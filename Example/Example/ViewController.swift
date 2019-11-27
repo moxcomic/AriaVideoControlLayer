@@ -27,6 +27,11 @@ class ViewController: UIViewController {
         player.view.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
+        
+        let asset = SJVideoPlayerURLAsset(url: URL(string: "https://youku.cdn7-okzy.com/20191128/15965_000b016f/index.m3u8")!)
+        asset?.title = "仿B站控制层"
+        
+        player.urlAsset = asset
     }
 }
 

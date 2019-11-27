@@ -24,6 +24,7 @@
 		0251592C238EF052005A1F43 /* AriaGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251592B238EF052005A1F43 /* AriaGlobal.swift */; };
 		0251592E238EF114005A1F43 /* SettingUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251592D238EF114005A1F43 /* SettingUtil.swift */; };
 		0287960F238EF696009CE337 /* AriaVideoControlLayer.swift in Headers */ = {isa = PBXBuildFile; fileRef = 0251591A238EEF3D005A1F43 /* AriaVideoControlLayer.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		02879611238EFA24009CE337 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 02879610238EFA24009CE337 /* Settings.bundle */; };
 		1FFDF0384ED1644BC35B4389 /* Pods_AriaVideoControlLayer_AriaVideoControlLayerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28F8742F91A5324FC07C1C16 /* Pods_AriaVideoControlLayer_AriaVideoControlLayerTests.framework */; };
 		E533B293F7F3AD821DEF01B5 /* Pods_AriaVideoControlLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63EB400302557890B98FB5A1 /* Pods_AriaVideoControlLayer.framework */; };
 /* End PBXBuildFile section */
@@ -58,6 +59,7 @@
 		0251591F238EEF3D005A1F43 /* AriaSelectionControlLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AriaSelectionControlLayer.swift; sourceTree = "<group>"; };
 		0251592B238EF052005A1F43 /* AriaGlobal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AriaGlobal.swift; sourceTree = "<group>"; };
 		0251592D238EF114005A1F43 /* SettingUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingUtil.swift; sourceTree = "<group>"; };
+		02879610238EFA24009CE337 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		28F8742F91A5324FC07C1C16 /* Pods_AriaVideoControlLayer_AriaVideoControlLayerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AriaVideoControlLayer_AriaVideoControlLayerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63EB400302557890B98FB5A1 /* Pods_AriaVideoControlLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AriaVideoControlLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ECE7AD4B01EE99F990E1C36 /* Pods-AriaVideoControlLayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AriaVideoControlLayer.release.xcconfig"; path = "Target Support Files/Pods-AriaVideoControlLayer/Pods-AriaVideoControlLayer.release.xcconfig"; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 		025158EE238EEED6005A1F43 = {
 			isa = PBXGroup;
 			children = (
+				02879610238EFA24009CE337 /* Settings.bundle */,
 				02515912238EEEEA005A1F43 /* Classes */,
 				025158FA238EEED6005A1F43 /* AriaVideoControlLayer */,
 				02515905238EEED6005A1F43 /* AriaVideoControlLayerTests */,
@@ -278,6 +281,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02879611238EFA24009CE337 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

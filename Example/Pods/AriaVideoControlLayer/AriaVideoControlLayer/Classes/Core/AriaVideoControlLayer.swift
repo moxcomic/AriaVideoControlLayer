@@ -54,7 +54,7 @@ let protraitMoreSettingControlLayerTag = LONG_MAX - 13
 let landscapeMoreSettingControlLayerTag = LONG_MAX - 14
 let danmakuSettingControlLayerTag = LONG_MAX - 15
 
-class AriaVideoControlLayer: SJEdgeControlLayerAdapters, SJControlLayer, SJEdgeControlLayerDelegate {
+public class AriaVideoControlLayer: SJEdgeControlLayerAdapters, SJControlLayer, SJEdgeControlLayerDelegate {
     fileprivate let disposeBag = DisposeBag()
     fileprivate weak var videoPlayer: SJVideoPlayer!
     fileprivate var reachabilityObserver: SJReachabilityObserver!
@@ -130,11 +130,11 @@ class AriaVideoControlLayer: SJEdgeControlLayerAdapters, SJControlLayer, SJEdgeC
         $0.addTarget(self, action: #selector(tappedBackItem), for: .touchUpInside)
     }
     
-    func controlView() -> UIView! {
+    public func controlView() -> UIView! {
         return self
     }
     
-    var restarted: Bool = false
+    public var restarted: Bool = false
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -153,14 +153,14 @@ class AriaVideoControlLayer: SJEdgeControlLayerAdapters, SJControlLayer, SJEdgeC
 
 // MARK: - internal method
 extension AriaVideoControlLayer {
-    func restartControlLayer() {
+    public func restartControlLayer() {
         restarted = true
         sj_view_makeAppear(controlView(), true)
         showOrHiddenLoadingView()
         videoPlayer.urlAsset != nil ? videoPlayer.controlLayerNeedAppear() : videoPlayer.controlLayerNeedDisappear()
     }
     
-    func exitControlLayer() {
+    public func exitControlLayer() {
         restarted = false
         
         sj_view_makeDisappear(controlView(), true) {
@@ -175,14 +175,14 @@ extension AriaVideoControlLayer {
         sj_view_makeDisappear(centerContainerView, true)
     }
     
-    func controlLayer(ofVideoPlayerCanAutomaticallyDisappear videoPlayer: SJBaseVideoPlayer!) -> Bool {
+    public func controlLayer(ofVideoPlayerCanAutomaticallyDisappear videoPlayer: SJBaseVideoPlayer!) -> Bool {
         let progressItem = bottomAdapter.item(forTag: SJEdgeControlLayerBottomItem_Progress)?.customView ?? getFullScreenSlider()
         guard
             let slider = progressItem as? SJProgressSlider else { return false }
         return !slider.isDragging
     }
     
-    func controlLayerNeedAppear(_ videoPlayer: SJBaseVideoPlayer!) {
+    public func controlLayerNeedAppear(_ videoPlayer: SJBaseVideoPlayer!) {
         if videoPlayer.isLockedScreen { return }
         
         updateResidentBackButtonAppearStateIfNeeded()
@@ -192,14 +192,14 @@ extension AriaVideoControlLayer {
         updateBottomProgressSliderItemIfNeeded()
     }
     
-    func controlLayerNeedDisappear(_ videoPlayer: SJBaseVideoPlayer!) {
+    public func controlLayerNeedDisappear(_ videoPlayer: SJBaseVideoPlayer!) {
         if videoPlayer.isLockedScreen { return }
         
         updateResidentBackButtonAppearStateIfNeeded()
         updateContainerViewsAppearState()
     }
     
-    func installedControlView(to videoPlayer: SJBaseVideoPlayer!) {
+    public func installedControlView(to videoPlayer: SJBaseVideoPlayer!) {
         videoPlayer.popPromptController.bottomMargin = bottomHeight
         
         self.videoPlayer = videoPlayer as? SJVideoPlayer
@@ -242,14 +242,14 @@ extension AriaVideoControlLayer {
         showOrRemoveBottomProgressIndicator()
     }
     
-    func lockedVideoPlayer(_ videoPlayer: SJBaseVideoPlayer!) {
+    public func lockedVideoPlayer(_ videoPlayer: SJBaseVideoPlayer!) {
         updateResidentBackButtonAppearStateIfNeeded()
         updateContainerViewsAppearState()
         updateAdaptersIfNeeded()
         lockStateTappedTimerControl.start()
     }
     
-    func videoPlayer(_ videoPlayer: SJBaseVideoPlayer!, panGestureTriggeredInTheHorizontalDirection state: SJPanGestureRecognizerState, progressTime: TimeInterval) {
+    public func videoPlayer(_ videoPlayer: SJBaseVideoPlayer!, panGestureTriggeredInTheHorizontalDirection state: SJPanGestureRecognizerState, progressTime: TimeInterval) {
         switch state {
         case SJPanGestureRecognizerStateBegan: onDragStart()
         case SJPanGestureRecognizerStateChanged: onDragMoving(progressTime: progressTime)
@@ -258,7 +258,7 @@ extension AriaVideoControlLayer {
         }
     }
     
-    func videoPlayer(_ videoPlayer: SJBaseVideoPlayer!, gestureRecognizerShouldTrigger type: SJPlayerGestureType, location: CGPoint) -> Bool {
+    public func videoPlayer(_ videoPlayer: SJBaseVideoPlayer!, gestureRecognizerShouldTrigger type: SJPlayerGestureType, location: CGPoint) -> Bool {
         var adapter: SJEdgeControlLayerItemAdapter!
         
         let locationInTheView: ((UIView?) -> Bool)? = { container in
@@ -284,7 +284,7 @@ extension AriaVideoControlLayer {
         return target.responds(to: item.action)
     }
     
-    func videoPlayer(_ videoPlayer: SJBaseVideoPlayer!, prepareToPlay asset: SJVideoPlayerURLAsset!) {
+    public func videoPlayer(_ videoPlayer: SJBaseVideoPlayer!, prepareToPlay asset: SJVideoPlayerURLAsset!) {
         updateBottomTimeLabelSize()
         updateBottomDurationItemIfNeeded()
         updateBottomCurrentTimeItemIfNeeded()
@@ -294,26 +294,26 @@ extension AriaVideoControlLayer {
         showOrHiddenLoadingView()
     }
     
-    func videoPlayerPlaybackStatusDidChange(_ videoPlayer: SJBaseVideoPlayer!) {
+    public func videoPlayerPlaybackStatusDidChange(_ videoPlayer: SJBaseVideoPlayer!) {
         updateAdaptersIfNeeded()
         showOrHiddenLoadingView()
     }
     
-    func videoPlayer(_ videoPlayer: SJBaseVideoPlayer!, currentTimeDidChange currentTime: TimeInterval) {
+    public func videoPlayer(_ videoPlayer: SJBaseVideoPlayer!, currentTimeDidChange currentTime: TimeInterval) {
         updateBottomCurrentTimeItemIfNeeded()
         updateBottomProgressIndicatorIfNeeded()
         updateBottomProgressSliderItemIfNeeded()
         updateDraggingProgressViewCurrentTimeIfNeeded()
     }
     
-    func videoPlayer(_ videoPlayer: SJBaseVideoPlayer!, durationDidChange duration: TimeInterval) {
+    public func videoPlayer(_ videoPlayer: SJBaseVideoPlayer!, durationDidChange duration: TimeInterval) {
         updateBottomTimeLabelSize()
         updateBottomDurationItemIfNeeded()
         updateBottomProgressIndicatorIfNeeded()
         updateBottomProgressSliderItemIfNeeded()
     }
     
-    func videoPlayer(_ videoPlayer: SJBaseVideoPlayer!, willRotateView isFull: Bool) {
+    public func videoPlayer(_ videoPlayer: SJBaseVideoPlayer!, willRotateView isFull: Bool) {
         updateResidentBackButtonAppearStateIfNeeded()
         updateContainerViewsAppearState()
         updateAdaptersIfNeeded()
@@ -324,7 +324,7 @@ extension AriaVideoControlLayer {
         if !sj_view_isDisappeared(bottomProgressIndicator) { sj_view_makeDisappear(bottomProgressIndicator, false) }
     }
     
-    func videoPlayer(_ videoPlayer: SJBaseVideoPlayer!, didEndRotation isFull: Bool) {
+    public func videoPlayer(_ videoPlayer: SJBaseVideoPlayer!, didEndRotation isFull: Bool) {
         if isFull {
             addLandscapeItemsToBottomAdapter()
             fullScreenStatusBar.isHidden = false
@@ -354,7 +354,7 @@ extension AriaVideoControlLayer {
         if !sj_view_isDisappeared(bottomProgressIndicator) { sj_view_makeDisappear(bottomProgressIndicator, false) }
     }
     
-    func videoPlayer(_ videoPlayer: SJBaseVideoPlayer!, willFitOnScreen isFitOnScreen: Bool) {
+    public func videoPlayer(_ videoPlayer: SJBaseVideoPlayer!, willFitOnScreen isFitOnScreen: Bool) {
         updateResidentBackButtonAppearStateIfNeeded()
         updateContainerViewsAppearState()
         updateAdaptersIfNeeded()
@@ -365,7 +365,7 @@ extension AriaVideoControlLayer {
         if !sj_view_isDisappeared(bottomProgressIndicator) { sj_view_makeDisappear(bottomProgressIndicator, false) }
     }
     
-    func tappedPlayer(onTheLockedState videoPlayer: SJBaseVideoPlayer!) {
+    public func tappedPlayer(onTheLockedState videoPlayer: SJBaseVideoPlayer!) {
         if sj_view_isDisappeared(rightContainerView) {
             sj_view_makeAppear(rightContainerView, true)
             lockStateTappedTimerControl.start()
@@ -375,12 +375,12 @@ extension AriaVideoControlLayer {
         }
     }
     
-    func unlockedVideoPlayer(_ videoPlayer: SJBaseVideoPlayer!) {
+    public func unlockedVideoPlayer(_ videoPlayer: SJBaseVideoPlayer!) {
         lockStateTappedTimerControl.clear()
         videoPlayer.controlLayerNeedAppear()
     }
     
-    func videoPlayer(_ videoPlayer: SJBaseVideoPlayer!, playbackTypeDidChange playbackType: SJPlaybackType) {
+    public func videoPlayer(_ videoPlayer: SJBaseVideoPlayer!, playbackTypeDidChange playbackType: SJPlaybackType) {
         let currentTimeItem = bottomAdapter.item(forTag: SJEdgeControlLayerBottomItem_CurrentTime)
         let separatorItem = bottomAdapter.item(forTag: SJEdgeControlLayerBottomItem_Separator)
         let durationTimeItem = bottomAdapter.item(forTag: SJEdgeControlLayerBottomItem_DurationTime)
@@ -406,7 +406,7 @@ extension AriaVideoControlLayer {
         showOrRemoveBottomProgressIndicator()
     }
     
-    func videoPlayer(_ videoPlayer: SJBaseVideoPlayer!, reachabilityChanged status: SJNetworkStatus) {
+    public func videoPlayer(_ videoPlayer: SJBaseVideoPlayer!, reachabilityChanged status: SJNetworkStatus) {
         if isDisabledPromptWhenNetworkStatusChanges { return }
         if videoPlayer.assetURL!.isFileURL { return } // return when is local video.
         switch status {
@@ -744,7 +744,7 @@ extension AriaVideoControlLayer {
 
 // MARK: - bottom progress slider delegate
 extension AriaVideoControlLayer: SJProgressSliderDelegate {
-    func sliderWillBeginDragging(_ slider: SJProgressSlider) {
+    public func sliderWillBeginDragging(_ slider: SJProgressSlider) {
         if videoPlayer.assetStatus != SJAssetStatus.readyToPlay {
             slider.cancelDragging()
             return
@@ -757,11 +757,11 @@ extension AriaVideoControlLayer: SJProgressSliderDelegate {
         onDragStart()
     }
     
-    func slider(_ slider: SJProgressSlider, valueDidChange value: CGFloat) {
+    public func slider(_ slider: SJProgressSlider, valueDidChange value: CGFloat) {
         if slider.isDragging { onDragMoving(progressTime: TimeInterval(value)) }
     }
     
-    func sliderDidEndDragging(_ slider: SJProgressSlider) {
+    public func sliderDidEndDragging(_ slider: SJProgressSlider) {
         onDragMoveEnd()
     }
 }
@@ -1233,7 +1233,7 @@ extension AriaVideoControlLayer {
         print("test action tapped...")
     }
     
-    func backItemWasTapped(for controlLayer: SJControlLayer) {
+    public func backItemWasTapped(for controlLayer: SJControlLayer) {
         guard let delegate = self.delegate else { return }
         if delegate.responds(to: #selector(SJEdgeControlLayerDelegate.backItemWasTapped(for:))) {
             delegate.backItemWasTapped(for: self)

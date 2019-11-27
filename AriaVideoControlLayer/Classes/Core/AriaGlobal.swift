@@ -8,6 +8,8 @@
 
 import UIKit
 
+let imageBundle = "Frameworks/AriaVideoControlLayer.framework/Settings.bundle/Image/"
+
 let biliPink = UIColor(red: 244 / 255, green: 89 / 255, blue: 136 / 255, alpha: 1)
 let defaultGray = UIColor(red: 224 / 255, green: 224 / 255, blue: 224 / 255, alpha: 1)
 let systemGray4 = UIColor(red: 0.8196078431372549, green: 0.8196078431372549, blue: 0.8392156862745098, alpha: 1.0)
