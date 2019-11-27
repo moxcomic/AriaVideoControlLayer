@@ -1,0 +1,6 @@
+framework module AriaSwiftyChain {
+  umbrella header "AriaSwiftyChain-umbrella.h"
+
+  export *
+  module * { export * }
+}

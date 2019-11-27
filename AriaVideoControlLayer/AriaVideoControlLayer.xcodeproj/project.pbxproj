@@ -1,0 +1,640 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02515902238EEED6005A1F43 /* AriaVideoControlLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 025158F8238EEED6005A1F43 /* AriaVideoControlLayer.framework */; };
+		02515907238EEED6005A1F43 /* AriaVideoControlLayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02515906238EEED6005A1F43 /* AriaVideoControlLayerTests.swift */; };
+		02515909238EEED6005A1F43 /* AriaVideoControlLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 025158FB238EEED6005A1F43 /* AriaVideoControlLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		02515920238EEF3D005A1F43 /* AriaDanmakuControlLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02515914238EEF3D005A1F43 /* AriaDanmakuControlLayer.swift */; };
+		02515921238EEF3D005A1F43 /* DanmakuSettingSliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02515916238EEF3D005A1F43 /* DanmakuSettingSliderTableViewCell.swift */; };
+		02515922238EEF3D005A1F43 /* LandscapeMoreSettingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02515917238EEF3D005A1F43 /* LandscapeMoreSettingCollectionViewCell.swift */; };
+		02515923238EEF3D005A1F43 /* LandscapeMoreSettingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02515918238EEF3D005A1F43 /* LandscapeMoreSettingHeaderView.swift */; };
+		02515924238EEF3D005A1F43 /* AriaSelectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02515919238EEF3D005A1F43 /* AriaSelectionCollectionViewCell.swift */; };
+		02515925238EEF3D005A1F43 /* AriaVideoControlLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251591A238EEF3D005A1F43 /* AriaVideoControlLayer.swift */; };
+		02515926238EEF3D005A1F43 /* AriaDanmakuSettingControlLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251591B238EEF3D005A1F43 /* AriaDanmakuSettingControlLayer.swift */; };
+		02515927238EEF3D005A1F43 /* AriaFullScreenStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251591C238EEF3D005A1F43 /* AriaFullScreenStatusBar.swift */; };
+		02515928238EEF3D005A1F43 /* AriaLandscapeMoreSettingControlLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251591D238EEF3D005A1F43 /* AriaLandscapeMoreSettingControlLayer.swift */; };
+		02515929238EEF3D005A1F43 /* AriaRateControlLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251591E238EEF3D005A1F43 /* AriaRateControlLayer.swift */; };
+		0251592A238EEF3D005A1F43 /* AriaSelectionControlLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251591F238EEF3D005A1F43 /* AriaSelectionControlLayer.swift */; };
+		0251592C238EF052005A1F43 /* AriaGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251592B238EF052005A1F43 /* AriaGlobal.swift */; };
+		0251592E238EF114005A1F43 /* SettingUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251592D238EF114005A1F43 /* SettingUtil.swift */; };
+		1FFDF0384ED1644BC35B4389 /* Pods_AriaVideoControlLayer_AriaVideoControlLayerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28F8742F91A5324FC07C1C16 /* Pods_AriaVideoControlLayer_AriaVideoControlLayerTests.framework */; };
+		E533B293F7F3AD821DEF01B5 /* Pods_AriaVideoControlLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63EB400302557890B98FB5A1 /* Pods_AriaVideoControlLayer.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		02515903238EEED6005A1F43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 025158EF238EEED6005A1F43 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 025158F7238EEED6005A1F43;
+			remoteInfo = AriaVideoControlLayer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		025158F8238EEED6005A1F43 /* AriaVideoControlLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AriaVideoControlLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		025158FB238EEED6005A1F43 /* AriaVideoControlLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AriaVideoControlLayer.h; sourceTree = "<group>"; };
+		025158FC238EEED6005A1F43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02515901238EEED6005A1F43 /* AriaVideoControlLayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AriaVideoControlLayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		02515906238EEED6005A1F43 /* AriaVideoControlLayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AriaVideoControlLayerTests.swift; sourceTree = "<group>"; };
+		02515908238EEED6005A1F43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02515914238EEF3D005A1F43 /* AriaDanmakuControlLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AriaDanmakuControlLayer.swift; sourceTree = "<group>"; };
+		02515916238EEF3D005A1F43 /* DanmakuSettingSliderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DanmakuSettingSliderTableViewCell.swift; sourceTree = "<group>"; };
+		02515917238EEF3D005A1F43 /* LandscapeMoreSettingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandscapeMoreSettingCollectionViewCell.swift; sourceTree = "<group>"; };
+		02515918238EEF3D005A1F43 /* LandscapeMoreSettingHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandscapeMoreSettingHeaderView.swift; sourceTree = "<group>"; };
+		02515919238EEF3D005A1F43 /* AriaSelectionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AriaSelectionCollectionViewCell.swift; sourceTree = "<group>"; };
+		0251591A238EEF3D005A1F43 /* AriaVideoControlLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AriaVideoControlLayer.swift; sourceTree = "<group>"; };
+		0251591B238EEF3D005A1F43 /* AriaDanmakuSettingControlLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AriaDanmakuSettingControlLayer.swift; sourceTree = "<group>"; };
+		0251591C238EEF3D005A1F43 /* AriaFullScreenStatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AriaFullScreenStatusBar.swift; sourceTree = "<group>"; };
+		0251591D238EEF3D005A1F43 /* AriaLandscapeMoreSettingControlLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AriaLandscapeMoreSettingControlLayer.swift; sourceTree = "<group>"; };
+		0251591E238EEF3D005A1F43 /* AriaRateControlLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AriaRateControlLayer.swift; sourceTree = "<group>"; };
+		0251591F238EEF3D005A1F43 /* AriaSelectionControlLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AriaSelectionControlLayer.swift; sourceTree = "<group>"; };
+		0251592B238EF052005A1F43 /* AriaGlobal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AriaGlobal.swift; sourceTree = "<group>"; };
+		0251592D238EF114005A1F43 /* SettingUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingUtil.swift; sourceTree = "<group>"; };
+		28F8742F91A5324FC07C1C16 /* Pods_AriaVideoControlLayer_AriaVideoControlLayerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AriaVideoControlLayer_AriaVideoControlLayerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		63EB400302557890B98FB5A1 /* Pods_AriaVideoControlLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AriaVideoControlLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7ECE7AD4B01EE99F990E1C36 /* Pods-AriaVideoControlLayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AriaVideoControlLayer.release.xcconfig"; path = "Target Support Files/Pods-AriaVideoControlLayer/Pods-AriaVideoControlLayer.release.xcconfig"; sourceTree = "<group>"; };
+		A7357F8862D9397BB2DD3A3B /* Pods-AriaVideoControlLayer-AriaVideoControlLayerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AriaVideoControlLayer-AriaVideoControlLayerTests.debug.xcconfig"; path = "Target Support Files/Pods-AriaVideoControlLayer-AriaVideoControlLayerTests/Pods-AriaVideoControlLayer-AriaVideoControlLayerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BCE6CBEC53407619B2CDEE1E /* Pods-AriaVideoControlLayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AriaVideoControlLayer.debug.xcconfig"; path = "Target Support Files/Pods-AriaVideoControlLayer/Pods-AriaVideoControlLayer.debug.xcconfig"; sourceTree = "<group>"; };
+		C851A8C9B8D6F5C61AD41DCE /* Pods-AriaVideoControlLayer-AriaVideoControlLayerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AriaVideoControlLayer-AriaVideoControlLayerTests.release.xcconfig"; path = "Target Support Files/Pods-AriaVideoControlLayer-AriaVideoControlLayerTests/Pods-AriaVideoControlLayer-AriaVideoControlLayerTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		025158F5238EEED6005A1F43 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E533B293F7F3AD821DEF01B5 /* Pods_AriaVideoControlLayer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		025158FE238EEED6005A1F43 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02515902238EEED6005A1F43 /* AriaVideoControlLayer.framework in Frameworks */,
+				1FFDF0384ED1644BC35B4389 /* Pods_AriaVideoControlLayer_AriaVideoControlLayerTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		025158EE238EEED6005A1F43 = {
+			isa = PBXGroup;
+			children = (
+				02515912238EEEEA005A1F43 /* Classes */,
+				025158FA238EEED6005A1F43 /* AriaVideoControlLayer */,
+				02515905238EEED6005A1F43 /* AriaVideoControlLayerTests */,
+				025158F9238EEED6005A1F43 /* Products */,
+				4D7005F1C171D8E842618828 /* Pods */,
+				04773F51CFFADD5196FBCC29 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		025158F9238EEED6005A1F43 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				025158F8238EEED6005A1F43 /* AriaVideoControlLayer.framework */,
+				02515901238EEED6005A1F43 /* AriaVideoControlLayerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		025158FA238EEED6005A1F43 /* AriaVideoControlLayer */ = {
+			isa = PBXGroup;
+			children = (
+				025158FB238EEED6005A1F43 /* AriaVideoControlLayer.h */,
+				025158FC238EEED6005A1F43 /* Info.plist */,
+			);
+			path = AriaVideoControlLayer;
+			sourceTree = "<group>";
+		};
+		02515905238EEED6005A1F43 /* AriaVideoControlLayerTests */ = {
+			isa = PBXGroup;
+			children = (
+				02515906238EEED6005A1F43 /* AriaVideoControlLayerTests.swift */,
+				02515908238EEED6005A1F43 /* Info.plist */,
+			);
+			path = AriaVideoControlLayerTests;
+			sourceTree = "<group>";
+		};
+		02515912238EEEEA005A1F43 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				02515913238EEF3D005A1F43 /* Core */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		02515913238EEF3D005A1F43 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				0251592D238EF114005A1F43 /* SettingUtil.swift */,
+				02515914238EEF3D005A1F43 /* AriaDanmakuControlLayer.swift */,
+				02515915238EEF3D005A1F43 /* ViewModel */,
+				0251591A238EEF3D005A1F43 /* AriaVideoControlLayer.swift */,
+				0251591B238EEF3D005A1F43 /* AriaDanmakuSettingControlLayer.swift */,
+				0251591C238EEF3D005A1F43 /* AriaFullScreenStatusBar.swift */,
+				0251591D238EEF3D005A1F43 /* AriaLandscapeMoreSettingControlLayer.swift */,
+				0251591E238EEF3D005A1F43 /* AriaRateControlLayer.swift */,
+				0251591F238EEF3D005A1F43 /* AriaSelectionControlLayer.swift */,
+				0251592B238EF052005A1F43 /* AriaGlobal.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		02515915238EEF3D005A1F43 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				02515916238EEF3D005A1F43 /* DanmakuSettingSliderTableViewCell.swift */,
+				02515917238EEF3D005A1F43 /* LandscapeMoreSettingCollectionViewCell.swift */,
+				02515918238EEF3D005A1F43 /* LandscapeMoreSettingHeaderView.swift */,
+				02515919238EEF3D005A1F43 /* AriaSelectionCollectionViewCell.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		04773F51CFFADD5196FBCC29 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				63EB400302557890B98FB5A1 /* Pods_AriaVideoControlLayer.framework */,
+				28F8742F91A5324FC07C1C16 /* Pods_AriaVideoControlLayer_AriaVideoControlLayerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4D7005F1C171D8E842618828 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BCE6CBEC53407619B2CDEE1E /* Pods-AriaVideoControlLayer.debug.xcconfig */,
+				7ECE7AD4B01EE99F990E1C36 /* Pods-AriaVideoControlLayer.release.xcconfig */,
+				A7357F8862D9397BB2DD3A3B /* Pods-AriaVideoControlLayer-AriaVideoControlLayerTests.debug.xcconfig */,
+				C851A8C9B8D6F5C61AD41DCE /* Pods-AriaVideoControlLayer-AriaVideoControlLayerTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		025158F3238EEED6005A1F43 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02515909238EEED6005A1F43 /* AriaVideoControlLayer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		025158F7238EEED6005A1F43 /* AriaVideoControlLayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0251590C238EEED6005A1F43 /* Build configuration list for PBXNativeTarget "AriaVideoControlLayer" */;
+			buildPhases = (
+				ACA78B1CAA8A2AE16AC807C2 /* [CP] Check Pods Manifest.lock */,
+				025158F3238EEED6005A1F43 /* Headers */,
+				025158F4238EEED6005A1F43 /* Sources */,
+				025158F5238EEED6005A1F43 /* Frameworks */,
+				025158F6238EEED6005A1F43 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AriaVideoControlLayer;
+			productName = AriaVideoControlLayer;
+			productReference = 025158F8238EEED6005A1F43 /* AriaVideoControlLayer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		02515900238EEED6005A1F43 /* AriaVideoControlLayerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0251590F238EEED6005A1F43 /* Build configuration list for PBXNativeTarget "AriaVideoControlLayerTests" */;
+			buildPhases = (
+				1517EEDA9D01BA6DB1392DB6 /* [CP] Check Pods Manifest.lock */,
+				025158FD238EEED6005A1F43 /* Sources */,
+				025158FE238EEED6005A1F43 /* Frameworks */,
+				025158FF238EEED6005A1F43 /* Resources */,
+				F432109FC9677B866E5A8908 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				02515904238EEED6005A1F43 /* PBXTargetDependency */,
+			);
+			name = AriaVideoControlLayerTests;
+			productName = AriaVideoControlLayerTests;
+			productReference = 02515901238EEED6005A1F43 /* AriaVideoControlLayerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		025158EF238EEED6005A1F43 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = moxcomic;
+				TargetAttributes = {
+					025158F7238EEED6005A1F43 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+					02515900238EEED6005A1F43 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 025158F2238EEED6005A1F43 /* Build configuration list for PBXProject "AriaVideoControlLayer" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 025158EE238EEED6005A1F43;
+			productRefGroup = 025158F9238EEED6005A1F43 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				025158F7238EEED6005A1F43 /* AriaVideoControlLayer */,
+				02515900238EEED6005A1F43 /* AriaVideoControlLayerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		025158F6238EEED6005A1F43 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		025158FF238EEED6005A1F43 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1517EEDA9D01BA6DB1392DB6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AriaVideoControlLayer-AriaVideoControlLayerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ACA78B1CAA8A2AE16AC807C2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AriaVideoControlLayer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F432109FC9677B866E5A8908 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AriaVideoControlLayer-AriaVideoControlLayerTests/Pods-AriaVideoControlLayer-AriaVideoControlLayerTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AriaVideoControlLayer-AriaVideoControlLayerTests/Pods-AriaVideoControlLayer-AriaVideoControlLayerTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AriaVideoControlLayer-AriaVideoControlLayerTests/Pods-AriaVideoControlLayer-AriaVideoControlLayerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		025158F4238EEED6005A1F43 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02515928238EEF3D005A1F43 /* AriaLandscapeMoreSettingControlLayer.swift in Sources */,
+				0251592A238EEF3D005A1F43 /* AriaSelectionControlLayer.swift in Sources */,
+				0251592E238EF114005A1F43 /* SettingUtil.swift in Sources */,
+				02515926238EEF3D005A1F43 /* AriaDanmakuSettingControlLayer.swift in Sources */,
+				02515929238EEF3D005A1F43 /* AriaRateControlLayer.swift in Sources */,
+				02515927238EEF3D005A1F43 /* AriaFullScreenStatusBar.swift in Sources */,
+				02515920238EEF3D005A1F43 /* AriaDanmakuControlLayer.swift in Sources */,
+				02515924238EEF3D005A1F43 /* AriaSelectionCollectionViewCell.swift in Sources */,
+				02515921238EEF3D005A1F43 /* DanmakuSettingSliderTableViewCell.swift in Sources */,
+				02515922238EEF3D005A1F43 /* LandscapeMoreSettingCollectionViewCell.swift in Sources */,
+				0251592C238EF052005A1F43 /* AriaGlobal.swift in Sources */,
+				02515925238EEF3D005A1F43 /* AriaVideoControlLayer.swift in Sources */,
+				02515923238EEF3D005A1F43 /* LandscapeMoreSettingHeaderView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		025158FD238EEED6005A1F43 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02515907238EEED6005A1F43 /* AriaVideoControlLayerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		02515904238EEED6005A1F43 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 025158F7238EEED6005A1F43 /* AriaVideoControlLayer */;
+			targetProxy = 02515903238EEED6005A1F43 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0251590A238EEED6005A1F43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0251590B238EEED6005A1F43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		0251590D238EEED6005A1F43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCE6CBEC53407619B2CDEE1E /* Pods-AriaVideoControlLayer.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = CU8H9UQL9A;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = AriaVideoControlLayer/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.moxcomic.AriaVideoControlLayer;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0251590E238EEED6005A1F43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7ECE7AD4B01EE99F990E1C36 /* Pods-AriaVideoControlLayer.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = CU8H9UQL9A;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = AriaVideoControlLayer/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.moxcomic.AriaVideoControlLayer;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		02515910238EEED6005A1F43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7357F8862D9397BB2DD3A3B /* Pods-AriaVideoControlLayer-AriaVideoControlLayerTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CU8H9UQL9A;
+				INFOPLIST_FILE = AriaVideoControlLayerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.moxcomic.AriaVideoControlLayerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		02515911238EEED6005A1F43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C851A8C9B8D6F5C61AD41DCE /* Pods-AriaVideoControlLayer-AriaVideoControlLayerTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CU8H9UQL9A;
+				INFOPLIST_FILE = AriaVideoControlLayerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.moxcomic.AriaVideoControlLayerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		025158F2238EEED6005A1F43 /* Build configuration list for PBXProject "AriaVideoControlLayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0251590A238EEED6005A1F43 /* Debug */,
+				0251590B238EEED6005A1F43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0251590C238EEED6005A1F43 /* Build configuration list for PBXNativeTarget "AriaVideoControlLayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0251590D238EEED6005A1F43 /* Debug */,
+				0251590E238EEED6005A1F43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0251590F238EEED6005A1F43 /* Build configuration list for PBXNativeTarget "AriaVideoControlLayerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02515910238EEED6005A1F43 /* Debug */,
+				02515911238EEED6005A1F43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 025158EF238EEED6005A1F43 /* Project object */;
+}
