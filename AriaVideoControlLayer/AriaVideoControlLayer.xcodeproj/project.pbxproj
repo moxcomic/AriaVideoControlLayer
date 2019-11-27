@@ -23,6 +23,7 @@
 		0251592A238EEF3D005A1F43 /* AriaSelectionControlLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251591F238EEF3D005A1F43 /* AriaSelectionControlLayer.swift */; };
 		0251592C238EF052005A1F43 /* AriaGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251592B238EF052005A1F43 /* AriaGlobal.swift */; };
 		0251592E238EF114005A1F43 /* SettingUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251592D238EF114005A1F43 /* SettingUtil.swift */; };
+		0287960F238EF696009CE337 /* AriaVideoControlLayer.swift in Headers */ = {isa = PBXBuildFile; fileRef = 0251591A238EEF3D005A1F43 /* AriaVideoControlLayer.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FFDF0384ED1644BC35B4389 /* Pods_AriaVideoControlLayer_AriaVideoControlLayerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28F8742F91A5324FC07C1C16 /* Pods_AriaVideoControlLayer_AriaVideoControlLayerTests.framework */; };
 		E533B293F7F3AD821DEF01B5 /* Pods_AriaVideoControlLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63EB400302557890B98FB5A1 /* Pods_AriaVideoControlLayer.framework */; };
 /* End PBXBuildFile section */
@@ -189,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02515909238EEED6005A1F43 /* AriaVideoControlLayer.h in Headers */,
+				0287960F238EF696009CE337 /* AriaVideoControlLayer.swift in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,6 +535,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.moxcomic.AriaVideoControlLayer;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -559,6 +562,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.moxcomic.AriaVideoControlLayer;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

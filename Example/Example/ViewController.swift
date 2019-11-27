@@ -7,14 +7,26 @@
 //
 
 import UIKit
+import SJVideoPlayer
+import SnapKit
+import AriaVideoControlLayer
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var playView: UIView!
+    
+    var player = SJVideoPlayer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        player.switcher.addControlLayer(forIdentifier: LONG_MAX - 1) { (id) -> SJControlLayer in
+            return AriaVideoControlLayer()
+        }
+        
+        playView.addSubview(player.view)
+        player.view.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
     }
-
-
 }
 
