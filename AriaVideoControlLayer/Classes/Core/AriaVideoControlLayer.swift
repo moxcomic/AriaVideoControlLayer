@@ -465,13 +465,13 @@ extension AriaVideoControlLayer {
         let shareItem = SJEdgeControlButtonItem.placeholder(with: SJButtonItemPlaceholderType_49x49, tag: kShareTag)
         shareItem.addTarget(self, action: #selector(tappedShareItem))
         shareItem.isHidden = true
-        shareItem.image = UIImage(named: imageBundle.appending("share"))
+        shareItem.image = UIImage(named: "share", in: imageBunde, compatibleWith: nil)
         topAdapter.add(shareItem)
         
         let moreItem = SJEdgeControlButtonItem.placeholder(with: SJButtonItemPlaceholderType_49x49, tag: kMoreTag)
         moreItem.addTarget(self, action: #selector(tappedMoreItem))
         moreItem.isHidden = true
-        moreItem.image = UIImage(named: imageBundle.appending("moreButton"))
+        moreItem.image = UIImage(named: "moreButton", in: imageBunde, compatibleWith: nil)
         topAdapter.add(moreItem)
         
         topAdapter.reload()
@@ -513,7 +513,7 @@ extension AriaVideoControlLayer {
         
         // 播放进度条
         let slider = SJProgressSlider()
-        slider.thumbImageView.image = UIImage(named: imageBundle.appending("slider"))
+        slider.thumbImageView.image = UIImage(named: "slider", in: imageBunde, compatibleWith: nil)
         slider.thumbImageView.contentMode = .scaleToFill
         slider.setThumbCornerRadius(0, size: CGSize(width: 16, height: 14), thumbBackgroundColor: .clear)
         slider.trackHeight = 2
@@ -554,7 +554,7 @@ extension AriaVideoControlLayer {
 
         // 全屏按钮
         let fullItem = SJEdgeControlButtonItem.placeholder(with: SJButtonItemPlaceholderType_49x49, tag: 100007)
-        fullItem.image = UIImage(named: imageBundle.appending("fullScreenButton"))
+        fullItem.image = UIImage(named: "fullScreenButton", in: imageBunde, compatibleWith: nil)
         fullItem.addTarget(self, action:#selector(tappedFullItem))
         bottomAdapter.add(fullItem)
         
@@ -569,7 +569,7 @@ extension AriaVideoControlLayer {
         
         // 播放进度条
         let slider = SJProgressSlider()
-        slider.thumbImageView.image = UIImage(named: imageBundle.appending("slider"))
+        slider.thumbImageView.image = UIImage(named: "slider", in: imageBunde, compatibleWith: nil)
         slider.thumbImageView.contentMode = .scaleToFill
         slider.setThumbCornerRadius(0, size: CGSize(width: 16, height: 14), thumbBackgroundColor: .clear)
         slider.trackHeight = 2
@@ -613,7 +613,7 @@ extension AriaVideoControlLayer {
         // 下一集按钮
         if playListCount > 1 {
             let nextItem = SJEdgeControlButtonItem.placeholder(with: SJButtonItemPlaceholderType_49x49, tag: kNextVideoTag)
-            nextItem.image = UIImage(named: imageBundle.appending("nextVideo"))
+            nextItem.image = UIImage(named: "nextVideo", in: imageBunde, compatibleWith: nil)
             nextItem.addTarget(self, action: #selector(tappedNextItem))
             bottomAdapter.add(nextItem)
         }
@@ -633,12 +633,12 @@ extension AriaVideoControlLayer {
         bottomAdapter.add(durationTimeItem)
         
         let danmakuSwitch = SJEdgeControlButtonItem.placeholder(with: SJButtonItemPlaceholderType_49x49, tag: kDanmakuSwitchTag)
-        danmakuSwitch.image = UIImage(named: imageBundle.appending("danmakuSwitchOn"))
+        danmakuSwitch.image = UIImage(named: "danmakuSwitchOn", in: imageBunde, compatibleWith: nil)
         danmakuSwitch.addTarget(self, action: #selector(tappedDanmakuSwitchItem))
         bottomAdapter.add(danmakuSwitch)
         
         let danmakuSetting = SJEdgeControlButtonItem.placeholder(with: SJButtonItemPlaceholderType_49x49, tag: kDanmakuSettingTag)
-        danmakuSetting.image = UIImage(named: imageBundle.appending("danmakuSetting"))
+        danmakuSetting.image = UIImage(named: "danmakuSetting", in: imageBunde, compatibleWith: nil)
         danmakuSetting.addTarget(self, action: #selector(tappedDanmakuSettingItem))
         bottomAdapter.add(danmakuSetting)
         
@@ -1056,7 +1056,7 @@ extension AriaVideoControlLayer {
         
         // danmaku switch
         if let danmakuSwitch = bottomAdapter.item(forTag: kDanmakuSwitchTag) {
-            danmakuSwitch.image = isDanmakuEnable ? UIImage(named: imageBundle.appending("danmakuSwitchOn")) : UIImage(named: imageBundle.appending("danmakuSwitchOff"))
+            danmakuSwitch.image = isDanmakuEnable ? UIImage(named: "danmakuSwitchOn", in: imageBunde, compatibleWith: nil) : UIImage(named: "danmakuSwitchOff", in: imageBunde, compatibleWith: nil)
         }
         
         // danmaku setting

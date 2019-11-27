@@ -29,7 +29,7 @@ class AriaFullScreenStatusBar: UIView {
     
     /// 电池外框
     fileprivate lazy var batteryView = UIImageView().then {
-        $0.image = UIImage(named: imageBundle.appending("battery"))
+        $0.image = UIImage(named: "battery", in: imageBunde, compatibleWith: nil)
         $0.contentMode = .scaleToFill
     }
     
@@ -40,7 +40,7 @@ class AriaFullScreenStatusBar: UIView {
     
     /// 网络状态
     fileprivate lazy var networkView = UIImageView().then {
-        $0.image = UIImage(named: imageBundle.appending("wifi"))
+        $0.image = UIImage(named: "wifi", in: imageBunde, compatibleWith: nil)
         $0.contentMode = .scaleToFill
     }
     
@@ -68,15 +68,15 @@ extension AriaFullScreenStatusBar {
             make.width.equalTo(18.5 * UIDevice.current.batteryLevel)
         }
         if UIDevice.current.batteryState == .charging || UIDevice.current.batteryState == .full {
-            self.batteryView.image = UIImage(named: imageBundle.appending("battery_charging"))
+            self.batteryView.image = UIImage(named: "battery_charging", in: imageBunde, compatibleWith: nil)
             self.batteryProgressView.backgroundColor = .green
         } else {
-            self.batteryView.image = UIImage(named: imageBundle.appending("battery"))
+            self.batteryView.image = UIImage(named: "battery", in: imageBunde, compatibleWith: nil)
             self.batteryProgressView.backgroundColor = .white
         }
         self.networkView.image =
         SJReachability.shared().networkStatus == SJNetworkStatus.reachableViaWiFi ?
-            UIImage(named: imageBundle.appending("wifi")) : UIImage(named: imageBundle.appending("cellular"))
+            UIImage(named: "wifi", in: imageBunde, compatibleWith: nil) : UIImage(named: "cellular", in: imageBunde, compatibleWith: nil)
     }
 }
 

@@ -8,7 +8,9 @@
 
 import UIKit
 
-let imageBundle = "Frameworks/AriaVideoControlLayer.framework/Settings.bundle/Image/"
+let imageBundlePath = Bundle.main.url(forResource: "Frameworks", withExtension: nil)!.appendingPathComponent("AriaVideoControlLayer.framework/Settings.bundle")
+
+let imageBunde = Bundle(url: imageBundlePath)!
 
 let biliPink = UIColor(red: 244 / 255, green: 89 / 255, blue: 136 / 255, alpha: 1)
 let defaultGray = UIColor(red: 224 / 255, green: 224 / 255, blue: 224 / 255, alpha: 1)

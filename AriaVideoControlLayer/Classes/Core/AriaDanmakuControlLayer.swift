@@ -93,7 +93,7 @@ extension AriaDanmakuControlLayer {
 extension AriaDanmakuControlLayer {
     func setupView() {
         let closeItem = SJEdgeControlButtonItem.placeholder(with:SJButtonItemPlaceholderType_49x49, tag: 10001)
-        closeItem.image = UIImage(named: imageBundle.appending("close"))
+        closeItem.image = UIImage(named: "close", in: imageBunde, compatibleWith: nil)
         closeItem.addTarget(self, action: #selector(tappedCloseItem))
         topAdapter.add(closeItem)
         
@@ -110,7 +110,7 @@ extension AriaDanmakuControlLayer {
         topAdapter.add(danmakuInput)
         
         let sendItem = SJEdgeControlButtonItem.placeholder(with:SJButtonItemPlaceholderType_49x49, tag: 10003)
-        sendItem.image = UIImage(named: imageBundle.appending("select"))
+        sendItem.image = UIImage(named: "select", in: imageBunde, compatibleWith: nil)
         sendItem.addTarget(self, action: #selector(tappedSendItem))
         topAdapter.add(sendItem)
         
