@@ -102,7 +102,7 @@ extension AriaDanmakuSettingControlLayer {
         })
         dataListArr.asObserver().bind(to: tableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
         
-        tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: (Int(screenW) - 44 * model[0].count) / 2))
+        tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: (Int(currentHeight) - 44 * model[0].count) / 2))
         var settingsModel = [SectionModel<String, [String: Any]>]()
         for i in 0..<model.count {
             settingsModel.append(SectionModel<String, [String : Any]>(model: String(i), items: model[i]))

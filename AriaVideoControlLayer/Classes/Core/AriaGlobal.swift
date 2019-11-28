@@ -16,5 +16,5 @@ let biliPink = UIColor(red: 244 / 255, green: 89 / 255, blue: 136 / 255, alpha: 
 let defaultGray = UIColor(red: 224 / 255, green: 224 / 255, blue: 224 / 255, alpha: 1)
 let systemGray4 = UIColor(red: 0.8196078431372549, green: 0.8196078431372549, blue: 0.8392156862745098, alpha: 1.0)
 
-let screenW = UIScreen.main.bounds.width
-let screenH = UIScreen.main.bounds.height
+let currentHeight = min(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
+let currentWidth = max(UIScreen.main.bounds.width, UIScreen.main.bounds.height)

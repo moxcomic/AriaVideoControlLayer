@@ -44,6 +44,7 @@ let kDefinitionTag = 300011
 let kNextVideoTag = 300100
 let kMoreTag = 300101
 let kShareTag = 300102
+let kSelectionTag = 300103
 
 let kFullScreenSliderTag = 400001
 
@@ -453,7 +454,7 @@ extension AriaVideoControlLayer {
     }
     
     fileprivate func addItemsToTopAdapter() {
-        topContainerView.addSubview(fullScreenStatusBar)
+        if #available(iOS 13, *) { topContainerView.addSubview(fullScreenStatusBar) }
         
         backItem = SJEdgeControlButtonItem.placeholder(with: SJButtonItemPlaceholderType_49x49, tag: SJEdgeControlLayerTopItem_Back)
         backItem.addTarget(self, action: #selector(tappedBackItem))
@@ -611,12 +612,11 @@ extension AriaVideoControlLayer {
         bottomAdapter.add(liveItem)
         
         // 下一集按钮
-        if playListCount > 1 {
-            let nextItem = SJEdgeControlButtonItem.placeholder(with: SJButtonItemPlaceholderType_49x49, tag: kNextVideoTag)
-            nextItem.image = UIImage(named: "nextVideo", in: imageBunde, compatibleWith: nil)
-            nextItem.addTarget(self, action: #selector(tappedNextItem))
-            bottomAdapter.add(nextItem)
-        }
+        let nextItem = SJEdgeControlButtonItem.placeholder(with: SJButtonItemPlaceholderType_49x49, tag: kNextVideoTag)
+        nextItem.isHidden = playListCount > 1
+        nextItem.image = UIImage(named: "nextVideo", in: imageBunde, compatibleWith: nil)
+        nextItem.addTarget(self, action: #selector(tappedNextItem))
+        bottomAdapter.add(nextItem)
         
         // 当前时间
         let currentTimeItem = SJEdgeControlButtonItem.placeholder(withSize:8, tag: SJEdgeControlLayerBottomItem_CurrentTime)
@@ -670,7 +670,8 @@ extension AriaVideoControlLayer {
         danmakuInput.fill = true
         bottomAdapter.add(danmakuInput)
         
-        let selection = SJEdgeControlButtonItem.placeholder(with: SJButtonItemPlaceholderType_49x49, tag: 300009)
+        let selection = SJEdgeControlButtonItem.placeholder(with: SJButtonItemPlaceholderType_49x49, tag: kSelectionTag)
+        selection.isHidden = playListCount > 1
         selection.addTarget(self, action: #selector(tappedSelectionItem))
         selection.title = NSAttributedString.sj_UIKitText({ (make) in
             _ = make.append("选集")
@@ -1104,8 +1105,15 @@ extension AriaVideoControlLayer {
         
         // next video item
         if let next = bottomAdapter.item(forTag: kNextVideoTag) {
+            if playListCount > 1 { next.isHidden = false }
+            else { next.isHidden = true }
 //            if currentPlayIndex >= playListCount - 1 { next.image?.withTintColor(.gray, renderingMode: .alwaysOriginal) }
 //            else { next.image?.withTintColor(.white, renderingMode: .alwaysOriginal) }
+        }
+        
+        if let selection = bottomAdapter.item(forTag: kSelectionTag) {
+            if playListCount > 1 { selection.isHidden = false }
+            else { selection.isHidden = true }
         }
         
         bottomAdapter.reload()

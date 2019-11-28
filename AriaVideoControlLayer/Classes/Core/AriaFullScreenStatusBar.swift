@@ -95,7 +95,7 @@ extension AriaFullScreenStatusBar {
     }
     
     fileprivate func setLayout() {
-        frame = CGRect(x: 0, y: 0, width: screenH, height: 34)
+        frame = CGRect(x: 0, y: 0, width: currentWidth, height: 34)
         
         timeLabel.snp.makeConstraints { (make) in
             make.top.equalToSuperview()
