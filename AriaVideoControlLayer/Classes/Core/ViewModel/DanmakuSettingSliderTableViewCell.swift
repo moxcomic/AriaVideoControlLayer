@@ -54,7 +54,7 @@ class DanmakuSettingSliderTableViewCell: UITableViewCell {
         $0.bufferProgressColor = sources.progress_bufferColor
         $0.trackHeight = CGFloat(sources.progress_traceHeight)
         $0.loadingColor = sources.loadingLineColor
-        $0.thumbImageView.image = UIImage(named: "slider", in: imageBunde, compatibleWith: nil)
+        $0.thumbImageView.image = UIImage(named: "ieSlider", in: imageBunde, compatibleWith: nil)
         $0.thumbImageView.contentMode = .scaleToFill
         $0.setThumbCornerRadius(0, size: CGSize(width: 16, height: 14), thumbBackgroundColor: .clear)
         $0.trackHeight = 2

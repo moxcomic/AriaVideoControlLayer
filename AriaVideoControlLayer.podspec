@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "AriaVideoControlLayer"
-  s.version          = "0.0.3"
+  s.version          = "0.0.4"
   s.summary          = "SJVideoPlayer控制层扩展."
   s.homepage         = "https://github.com/moxcomic/AriaVideoControlLayer.git"
   s.license          = { :type => "MIT", :file => "LICENSE" }

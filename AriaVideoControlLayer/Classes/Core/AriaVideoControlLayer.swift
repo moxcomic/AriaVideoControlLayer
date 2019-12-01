@@ -514,9 +514,9 @@ extension AriaVideoControlLayer {
         
         // 播放进度条
         let slider = SJProgressSlider()
-        slider.thumbImageView.image = UIImage(named: "slider", in: imageBunde, compatibleWith: nil)
+        slider.thumbImageView.image = UIImage(named: "videoSlider@2x", in: imageBunde, compatibleWith: nil)
         slider.thumbImageView.contentMode = .scaleToFill
-        slider.setThumbCornerRadius(0, size: CGSize(width: 16, height: 14), thumbBackgroundColor: .clear)
+        slider.setThumbCornerRadius(0, size: CGSize(width: 18, height: 16), thumbBackgroundColor: .clear)
         slider.trackHeight = 2
         slider.delegate = self
         slider.tap.isEnabled = true
@@ -570,9 +570,9 @@ extension AriaVideoControlLayer {
         
         // 播放进度条
         let slider = SJProgressSlider()
-        slider.thumbImageView.image = UIImage(named: "slider", in: imageBunde, compatibleWith: nil)
+        slider.thumbImageView.image = UIImage(named: "videoSlider@2x", in: imageBunde, compatibleWith: nil)
         slider.thumbImageView.contentMode = .scaleToFill
-        slider.setThumbCornerRadius(0, size: CGSize(width: 16, height: 14), thumbBackgroundColor: .clear)
+        slider.setThumbCornerRadius(0, size: CGSize(width: 18, height: 16), thumbBackgroundColor: .clear)
         slider.trackHeight = 2
         slider.delegate = self
         slider.tap.isEnabled = true
