@@ -13,7 +13,6 @@
 #import "SJBaseVideoPlayer+TestLog.h"
 #import "SJBaseVideoPlayer.h"
 #import "UIScrollView+ListViewAutoplaySJAdd.h"
-#import "UIViewController+SJRotationPrivate_FixSafeArea.h"
 #import "AVAsset+SJAVMediaExport.h"
 #import "SJAVBasePlayer.h"
 #import "SJAVBasePlayerItem.h"

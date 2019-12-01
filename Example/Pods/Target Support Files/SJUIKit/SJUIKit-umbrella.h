@@ -43,7 +43,6 @@
 #import "NSObject+SJObserverHelper.h"
 #import "SJApplicationInfo.h"
 #import "SJObjectContainer.h"
-#import "UIViewController+SJModalAlert.h"
 #import "SJImagePickerController.h"
 #import "UIImagePickerController+SJUIKitExtension.h"
 #import "SJQueue.h"

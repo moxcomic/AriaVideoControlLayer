@@ -1,6 +1,6 @@
 {
   "name": "AriaVideoControlLayer",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "summary": "SJVideoPlayer控制层扩展.",
   "homepage": "https://github.com/moxcomic/AriaVideoControlLayer.git",
   "license": {
@@ -12,7 +12,7 @@
   },
   "source": {
     "git": "https://github.com/moxcomic/AriaVideoControlLayer.git",
-    "tag": "0.0.1"
+    "tag": "0.0.3"
   },
   "platforms": {
     "ios": "11.0"
