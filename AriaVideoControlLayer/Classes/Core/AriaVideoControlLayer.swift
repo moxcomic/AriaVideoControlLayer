@@ -93,8 +93,8 @@ public class AriaVideoControlLayer: SJEdgeControlLayerAdapters, SJControlLayer, 
     }
     open var shareBlock: (() -> ())?
     
-    fileprivate lazy var loadingView: SJEdgeControlLayerLoadingViewProtocol = SJNetworkLoadingView().then {
-        $0.lineColor = SJEdgeControlLayerSettings.common().loadingLineColor
+    fileprivate lazy var loadingView = SJLoadingView().then {
+        //$0.lineColor = SJVideoPlayerSettings.common().loadingLineColor
         controlView()?.addSubview($0)
         $0.snp.makeConstraints { (make) in
             make.center.equalToSuperview()
@@ -104,16 +104,17 @@ public class AriaVideoControlLayer: SJEdgeControlLayerAdapters, SJControlLayer, 
     lazy var bottomProgressIndicator = SJProgressSlider().then {
         $0.pan.isEnabled = true
         $0.trackHeight = bottomProgressIndicatorHeight
-        let setting = SJEdgeControlLayerSettings.common()
+        let setting = SJVideoPlayerSettings.common()
         let traceColor = setting.bottomIndicator_traceColor ?? setting.progress_traceColor
         let trackColor = setting.bottomIndicator_trackColor ?? setting.progress_trackColor
         $0.traceImageView.backgroundColor = traceColor
         $0.trackImageView.backgroundColor = trackColor
     }
     
-    lazy var draggingProgressView = SJVideoPlayerDraggingProgressView().then {
+    lazy var draggingObserver = SJDraggingObservation()
+    lazy var draggingProgressPopView = SJDraggingProgressPopView().then {
         if let image = self.videoPlayer.presentView.placeholderImageView.image {
-            $0.setPreviewImage(image)
+            //$0.setPreviewImage(image)
         }
         sj_view_makeDisappear($0, false)
     }
@@ -127,7 +128,7 @@ public class AriaVideoControlLayer: SJEdgeControlLayerAdapters, SJControlLayer, 
     }
     
     lazy var residentBackButton = UIButton().then {
-        $0.setImage(SJEdgeControlLayerSettings.common().backBtnImage, for: .normal)
+        $0.setImage(SJVideoPlayerSettings.common().backBtnImage, for: .normal)
         $0.addTarget(self, action: #selector(tappedBackItem), for: .touchUpInside)
     }
     
@@ -172,7 +173,7 @@ extension AriaVideoControlLayer {
         sj_view_makeDisappear(leftContainerView, true)
         sj_view_makeDisappear(bottomContainerView, true)
         sj_view_makeDisappear(rightContainerView, true)
-        sj_view_makeDisappear(draggingProgressView, true)
+        sj_view_makeDisappear(draggingProgressPopView, true)
         sj_view_makeDisappear(centerContainerView, true)
     }
     
@@ -260,7 +261,7 @@ extension AriaVideoControlLayer {
     }
     
     public func videoPlayer(_ videoPlayer: SJBaseVideoPlayer!, gestureRecognizerShouldTrigger type: SJPlayerGestureType, location: CGPoint) -> Bool {
-        var adapter: SJEdgeControlLayerItemAdapter!
+        var adapter: SJEdgeControlButtonItemAdapter!
         
         let locationInTheView: ((UIView?) -> Bool)? = { container in
             return container!.frame.contains(location) && !sj_view_isDisappeared(container!)
@@ -414,12 +415,12 @@ extension AriaVideoControlLayer {
             
         case .notReachable:
             videoPlayer.prompt.show(NSAttributedString.sj_UIKitText({ (make) in
-                _ = make.append(SJEdgeControlLayerSettings.common().notReachablePrompt)
+                _ = make.append(SJVideoPlayerSettings.common().unstableNetworkPrompt!)
                 _ = make.textColor(.white)
             }), duration: 3)
         case .reachableViaWWAN:
             videoPlayer.prompt.show(NSAttributedString.sj_UIKitText({ (make) in
-                _ = make.append(SJEdgeControlLayerSettings.common().reachableViaWWANPrompt)
+                _ = make.append(SJVideoPlayerSettings.common().cellularNetworkPrompt!)
                 _ = make.textColor(.white)
             }), duration: 3)
         case .reachableViaWiFi: break
@@ -504,7 +505,7 @@ extension AriaVideoControlLayer {
         
         // 播放按钮
         let playItem = SJEdgeControlButtonItem.placeholder(with:SJButtonItemPlaceholderType_49x49, tag: SJEdgeControlLayerBottomItem_Play)
-        playItem.image = SJEdgeControlLayerSettings.common().playBtnImage
+        playItem.image = SJVideoPlayerSettings.common().playBtnImage
         playItem.addTarget(self, action: #selector(tappedPlayItem))
         bottomAdapter.add(playItem)
         
@@ -603,7 +604,7 @@ extension AriaVideoControlLayer {
         
         // 播放按钮
         let playItem = SJEdgeControlButtonItem.placeholder(with:SJButtonItemPlaceholderType_49x49, tag: SJEdgeControlLayerBottomItem_Play)
-        playItem.image = SJEdgeControlLayerSettings.common().playBtnImage
+        playItem.image = SJVideoPlayerSettings.common().playBtnImage
         playItem.addTarget(self, action: #selector(tappedPlayItem))
         bottomAdapter.add(playItem)
 
@@ -795,7 +796,7 @@ extension AriaVideoControlLayer {
 
 // MARK: - loading view
 extension AriaVideoControlLayer {
-    func setLoadingView(loadingView: SJEdgeControlLayerLoadingViewProtocol?) {
+    func setLoadingView(loadingView: SJLoadingView?) {
         guard let lv = self.loadingView as? UIView else { return }
         lv.removeFromSuperview()
         self.loadingView = loadingView!
@@ -825,7 +826,7 @@ extension AriaVideoControlLayer {
     
     func updateTopAdapterIfNeeded() {
         if sj_view_isDisappeared(topContainerView) { return }
-        let sources = SJEdgeControlLayerSettings.common()
+        let sources = SJVideoPlayerSettings.common()
         let isFullscreen = videoPlayer.isFullScreen
         let isFitOnScreen = videoPlayer.isFitOnScreen
         let isPlayOnScrollView = videoPlayer.isPlayOnScrollView
@@ -849,8 +850,8 @@ extension AriaVideoControlLayer {
                     if titleItem.title != nil && titleItem.title!.isEqual(title!) { return }
                     titleItem.title = NSAttributedString.sj_UIKitText({ (make) in
                         _ = make.append(title!)
-                        _ = make.font(sources.titleFont)
-                        _ = make.textColor(sources.titleColor)
+                        _ = make.font(sources.titleFont!)
+                        _ = make.textColor(sources.titleColor!)
                         _ = make.lineBreakMode(.byTruncatingTail)
                         _ = make.shadow({ (make) in
                             make.shadowOffset = CGSize(width: 0, height: 0.5)
@@ -859,14 +860,14 @@ extension AriaVideoControlLayer {
                     })
                 }
                 
-                titleItem.isHidden = (titleItem.title!.length == 0)
+                titleItem.isHidden = titleItem.title == nil || titleItem.title!.length == 0
                 
                 if !titleItem.isHidden {
                     // margin
                     let atIndex = topAdapter.indexOfItem(forTag: SJEdgeControlLayerTopItem_Title)
-                    let left: CGFloat  = topAdapter.itemsIsHidden(with: NSRange(location: 0, length: atIndex)) ? 16 : 0
-                    let right: CGFloat = topAdapter.itemsIsHidden(with: NSRange(location: atIndex, length: topAdapter.itemCount)) ? 16 : 0
-                    titleItem.insets = SJEdgeInsetsMake(left, right);
+                    let left: CGFloat = topAdapter.isHidden(with: NSRange(location: 0, length: atIndex)) ? 16 : 0
+                    let right: CGFloat = topAdapter.isHidden(with: NSRange(location: atIndex, length: topAdapter.numberOfItems)) ? 16 : 0
+                    titleItem.insets = SJEdgeInsetsMake(left, right)
                 }
             }
         }
@@ -887,7 +888,7 @@ extension AriaVideoControlLayer {
         if let lockItem = rightAdapter.item(forTag: SJEdgeControlLayerLeftItem_Lock) {
             lockItem.isHidden = !isFullscreen
             if !lockItem.isHidden {
-                let setting = SJEdgeControlLayerSettings.common()
+                let setting = SJVideoPlayerSettings.common()
                 lockItem.image = isLockedScreen ? setting.lockBtnImage : setting.unlockBtnImage
             }
         }
@@ -901,20 +902,20 @@ extension AriaVideoControlLayer {
         if let replayItem = centerAdapter.item(forTag: SJEdgeControlLayerCenterItem_Replay) {
             replayItem.isHidden = !videoPlayer.isPlayedToEndTime
             if !replayItem.isHidden && replayItem.title == nil {
-                let sources = SJEdgeControlLayerSettings.common()
+                let sources = SJVideoPlayerSettings.common()
                 if let textLabel = replayItem.customView as? UILabel {
                     textLabel.attributedText = NSAttributedString.sj_UIKitText({ (make) in
                         _ = make.alignment(.center).lineSpacing(6)
-                        _ = make.font(sources.replayBtnFont)
-                        _ = make.textColor(sources.replayBtnTitleColor)
-                        if sources.replayBtnImage.cgImage != nil {
+                        _ = make.font(sources.replayBtnFont!)
+                        _ = make.textColor(sources.replayBtnTitleColor!)
+                        if sources.replayBtnImage!.cgImage != nil {
                             _ = make.appendImage({ (make) in
                                 make.image = sources.replayBtnImage
                             })
                         }
-                        if sources.replayBtnTitle.count != 0 {
-                            if sources.replayBtnImage.cgImage != nil { _ = make.append("\n") }
-                            _ = make.append(sources.replayBtnTitle)
+                        if sources.replayBtnTitle!.count != 0 {
+                            if sources.replayBtnImage!.cgImage != nil { _ = make.append("\n") }
+                            _ = make.append(sources.replayBtnTitle!)
                         }
                     })
                     textLabel.bounds = CGRect(origin: CGPoint.zero, size: textLabel.attributedText!.sj_textSize())
@@ -968,9 +969,9 @@ extension AriaVideoControlLayer {
         
         if isShowNetworkSpeedToLoadingView && videoPlayer.assetURL != nil && !videoPlayer.assetURL!.isFileURL {
             self.loadingView.networkSpeedStr = NSAttributedString.sj_UIKitText({ (make) in
-                let settings = SJEdgeControlLayerSettings.common()
-                _ = make.font(settings.loadingNetworkSpeedTextFont)
-                _ = make.textColor(settings.loadingNetworkSpeedTextColor)
+                let settings = SJVideoPlayerSettings.common()
+                _ = make.font(settings.loadingNetworkSpeedTextFont!)
+                _ = make.textColor(settings.loadingNetworkSpeedTextColor!)
                 _ = make.alignment(.center)
                 _ = make.append(self.videoPlayer.reachability.networkSpeedStr)
             })
@@ -997,13 +998,28 @@ extension AriaVideoControlLayer {
     }
     
     func updateDraggingProgressViewCurrentTimeIfNeeded() {
-        if !sj_view_isDisappeared(draggingProgressView) { draggingProgressView.setCurrentTime(videoPlayer.currentTime) }
+        if !sj_view_isDisappeared(draggingProgressPopView) { draggingProgressPopView.currentTime = videoPlayer.currentTime }
+    }
+    
+    func updateForDraggingProgressPopView() {
+        var style = SJDraggingProgressPopViewStyleNormal
+        if !videoPlayer.urlAsset!.isM3u8 && videoPlayer.playbackController.responds(to: #selector(SJVideoPlayer.screenshot(withTime:completion:))) {
+            if videoPlayer.isFullScreen {
+                style = SJDraggingProgressPopViewStyleFullscreen
+            } else if videoPlayer.isFitOnScreen {
+                style = SJDraggingProgressPopViewStyleFitOnScreen
+            }
+        }
+        draggingProgressPopView.style = style
+        draggingProgressPopView.duration = videoPlayer.duration
+        draggingProgressPopView.currentTime = videoPlayer.currentTime
+        draggingProgressPopView.dragProgressTime = videoPlayer.currentTime
     }
     
     func updateBottomAdapterIfNeeded() {
         if sj_view_isDisappeared(bottomContainerView) { return }
         
-        let sources = SJEdgeControlLayerSettings.common()
+        let sources = SJVideoPlayerSettings.common()
         
         // play item
         if let playItem = bottomAdapter.item(forTag: SJEdgeControlLayerBottomItem_Play) {
@@ -1021,7 +1037,7 @@ extension AriaVideoControlLayer {
                     slider.trackImageView.backgroundColor = sources.progress_trackColor
                     slider.bufferProgressColor = sources.progress_bufferColor
                     slider.trackHeight = CGFloat(sources.progress_traceHeight)
-                    slider.loadingColor = sources.loadingLineColor
+                    slider.loadingColor = sources.loadingLineColor!
                     
                     //                    if sources.progress_thumbImage != nil { slider.thumbImageView.image = sources.progress_thumbImage }
                     //                    else if !sources.progress_thumbSize.isNaN {
@@ -1044,9 +1060,9 @@ extension AriaVideoControlLayer {
         if let liveItem = bottomAdapter.item(forTag: SJEdgeControlLayerBottomItem_LIVEText) {
             if !liveItem.isHidden {
                 liveItem.title = NSAttributedString.sj_UIKitText({ (make) in
-                    _ = make.append(sources.liveText)
-                    _ = make.font(sources.titleFont)
-                    _ = make.textColor(sources.titleColor)
+                    _ = make.append(sources.liveText!)
+                    _ = make.font(sources.titleFont!)
+                    _ = make.textColor(sources.titleColor!)
                     _ = make.shadow({ (make) in
                         make.shadowOffset = CGSize(width: 0, height: 0.5)
                         make.shadowColor = UIColor.black
@@ -1409,46 +1425,49 @@ extension AriaVideoControlLayer {
     }
     
     func onDragStart() {
-        if videoPlayer.isFullScreen ||
-             !videoPlayer.playbackController.isReadyForDisplay ||
-            videoPlayer.urlAsset!.isM3u8 ||
-            !videoPlayer.playbackController.responds(to: #selector(SJMediaPlaybackScreenshotController.screenshot(withTime:size:completion:))) {
-            draggingProgressView.style = SJVideoPlayerDraggingProgressViewStyle.arrowProgress
-        } else { self.draggingProgressView.style = SJVideoPlayerDraggingProgressViewStyle.previewProgress }
-        
-        controlView().addSubview(draggingProgressView)
-        draggingProgressView.snp.makeConstraints { (make) in
-            make.center.equalToSuperview()
+        controlView()?.addSubview(draggingProgressPopView)
+        updateForDraggingProgressPopView()
+        draggingProgressPopView.snp.makeConstraints({ $0.center.equalToSuperview() })
+
+        sj_view_initializes(draggingProgressPopView)
+        sj_view_makeAppear(draggingProgressPopView, false)
+
+        if (draggingObserver.willBeginDraggingExeBlock != nil) {
+            draggingObserver.willBeginDraggingExeBlock?(draggingProgressPopView.dragProgressTime)
         }
-        
-        sj_view_initializes(draggingProgressView)
-        sj_view_makeAppear(draggingProgressView, false)
-        
-        draggingProgressView.setMaxValue(videoPlayer.duration)
-        draggingProgressView.setProgressTimeStr(
-            videoPlayer.string(forSeconds: Int(videoPlayer!.currentTime)),
-            totalTimeStr: videoPlayer.string(forSeconds: Int(videoPlayer!.duration))
-        )
     }
     
     func onDragMoving(progressTime: TimeInterval) {
-        draggingProgressView.progressTime = progressTime
-        draggingProgressView.setProgressTimeStr(videoPlayer.string(forSeconds: Int(progressTime)))
-        
-        // 生成预览图
-        if draggingProgressView.style == SJVideoPlayerDraggingProgressViewStyle.previewProgress {
-            videoPlayer.screenshot(withTime: progressTime, size: CGSize(width: draggingProgressView.frame.size.width * 2, height: draggingProgressView.frame.size.height * 2)) { [weak self] (videoPlayer, image, error) in
-                guard let strongSelf = self else { return }
-                if let img = image { strongSelf.draggingProgressView.setPreviewImage(img) }
+        draggingProgressPopView.dragProgressTime = progressTime
+        // 是否生成预览图
+        if draggingProgressPopView.isPreviewImageHidden == false {
+            videoPlayer.screenshot(withTime: progressTime, size: CGSize(width: draggingProgressPopView.frame.size.width, height: draggingProgressPopView.frame.size.height)) { [weak self] videoPlayer, image, error in
+                guard let `self` = self else { return }
+                self.draggingProgressPopView.previewImage = image
             }
+        }
+
+        if (draggingObserver.didMoveExeBlock != nil) {
+            draggingObserver.didMoveExeBlock?(draggingProgressPopView.dragProgressTime)
         }
     }
     
     func onDragMoveEnd() {
-        videoPlayer.seek(toTime: draggingProgressView.progressTime, completionHandler: nil)
+        let time = draggingProgressPopView.dragProgressTime
+        if (draggingObserver.willEndDraggingExeBlock != nil) {
+            draggingObserver.willEndDraggingExeBlock?(time)
+        }
 
-        sj_view_makeDisappear(draggingProgressView, true) {
-            if sj_view_isDisappeared(self.draggingProgressView) { self.draggingProgressView.removeFromSuperview() }
+        videoPlayer.seek(toTime: time, completionHandler: nil)
+
+        sj_view_makeDisappear(draggingProgressPopView, true, {
+            if sj_view_isDisappeared(self.draggingProgressPopView) {
+                self.draggingProgressPopView.removeFromSuperview()
+            }
+        })
+
+        if (draggingObserver.didEndDraggingExeBlock != nil) {
+            draggingObserver.didEndDraggingExeBlock?(time)
         }
     }
 }

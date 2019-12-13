@@ -15,6 +15,7 @@
 #import "UIScrollView+SJRefreshAdd.h"
 #import "SJRunLoopTaskQueue.h"
 #import "SJTaskQueue.h"
+#import "SJQueue.h"
 #import "SJUIMaker.h"
 #import "SJAttributesFactory.h"
 #import "NSObject+SJObserverHelper.h"

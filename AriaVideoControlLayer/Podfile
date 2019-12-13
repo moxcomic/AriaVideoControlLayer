@@ -10,8 +10,8 @@ target 'AriaVideoControlLayer' do
   pod 'RxDataSources'
   pod 'Then'
   pod 'SnapKit'
-  pod 'SJVideoPlayer', :git => 'https://gitee.com/changsanjiang/SJVideoPlayer.git'
-  pod 'SJUIKit', :git => 'https://gitee.com/changsanjiang/SJUIKit.git'
+  pod 'SJVideoPlayer'#, :git => 'https://gitee.com/changsanjiang/SJVideoPlayer.git'
+  pod 'SJUIKit'#, :git => 'https://gitee.com/changsanjiang/SJUIKit.git'
   pod 'AriaSwiftyChain', :podspec => '/Users/aria/Desktop/WorkSpace/Pod/AriaSwiftyChain/AriaSwiftyChain.podspec'
 
   target 'AriaVideoControlLayerTests' do

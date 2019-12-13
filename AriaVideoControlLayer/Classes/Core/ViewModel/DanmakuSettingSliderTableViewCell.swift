@@ -48,12 +48,12 @@ class DanmakuSettingSliderTableViewCell: UITableViewCell {
     }
     
     fileprivate lazy var slider = SJProgressSlider().then {
-        let sources = SJEdgeControlLayerSettings.common()
+        let sources = SJVideoPlayerSettings.common()
         $0.traceImageView.backgroundColor = sources.progress_traceColor
         $0.trackImageView.backgroundColor = sources.progress_trackColor
         $0.bufferProgressColor = sources.progress_bufferColor
         $0.trackHeight = CGFloat(sources.progress_traceHeight)
-        $0.loadingColor = sources.loadingLineColor
+        $0.loadingColor = sources.loadingLineColor!
         $0.thumbImageView.image = UIImage(named: "ieSlider", in: imageBunde, compatibleWith: nil)
         $0.thumbImageView.contentMode = .scaleToFill
         $0.setThumbCornerRadius(0, size: CGSize(width: 16, height: 14), thumbBackgroundColor: .clear)
